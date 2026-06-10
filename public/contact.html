@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Vertex Global Excellence — Reach our concierge team for luxury financial services, travel planning, and bespoke lifestyle management.">
+  <meta name="keywords" content="Vertex, contact, luxury concierge, wealth management, travel planning, global excellence">
+  <meta name="author" content="Vertex Global Excellence">
+  <meta property="og:title" content="Contact Us | Vertex Global Excellence">
+  <meta property="og:description" content="Get in touch with our concierge team. We respond within 2 hours.">
+  <meta property="og:type" content="website">
+  <title>Contact Us | Vertex Global Excellence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Contact-page specific overrides ── */
+
+    /* HERO with image + watermark */
+    .contact-hero {
+      position: relative;
+      min-height: 340px;
+      margin-top: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .contact-hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .contact-hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .contact-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+        rgba(7,9,15,0.80) 0%,
+        rgba(7,9,15,0.55) 55%,
+        rgba(7,9,15,0.70) 100%);
+    }
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 24px 100px;
+      width: 100%;
+    }
+    .contact-hero-content h1 {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    /* V VERTEX watermark */
+    .contact-hero-watermark {
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      text-align: center;
+      opacity: 0.18;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .contact-hero-watermark .wm-v {
+      display: block;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 900;
+      color: #C9A84C;
+      letter-spacing: -0.04em;
+    }
+    .contact-hero-watermark .wm-vertex {
+      display: block;
+      font-size: clamp(1rem, 3vw, 2rem);
+      font-weight: 900;
+      color: #C9A84C;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    /* FLOATING CONTACT CARDS — overlap hero bottom */
+    .contact-cards-floating {
+      position: relative;
+      z-index: 10;
+      margin-top: -64px;
+      padding: 0 0 0;
+    }
+    .contact-cards-floating .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .cf-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 18px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cf-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+    }
+    .cf-card .cf-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,0.10);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .cf-card .cf-icon svg { width: 22px; height: 22px; color: #C9A84C; }
+    .cf-card h4 { font-size: 0.92rem; font-weight: 700; color: #111827; margin-bottom: 5px; }
+    .cf-card p  { font-size: 0.82rem; color: #6b7280; line-height: 1.4; }
+
+    /* OUR JOURNEY — image RIGHT */
+    .journey-section {
+      padding: 80px 0 48px;
+      background: #fff;
+    }
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .journey-content .sub-label {
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: #C9A84C; margin-bottom: 14px;
+    }
+    .journey-content h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800; color: #111827;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .journey-content p {
+      font-size: 0.9rem; color: #4b5563;
+      line-height: 1.75; margin-bottom: 14px;
+    }
+    .journey-image {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .journey-image img {
+      width: 100%; height: 380px;
+      object-fit: cover; display: block;
+    }
+    /* Values bar */
+    .values-bar-new {
+      display: flex;
+      gap: 48px;
+      padding: 32px 0 0;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 36px;
+    }
+    .values-bar-new .val {
+      font-size: 0.95rem; font-weight: 600;
+      color: #111827;
+      position: relative; padding-left: 14px;
+    }
+    .values-bar-new .val::before {
+      content: '';
+      position: absolute; left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 3px; height: 18px;
+      background: #C9A84C; border-radius: 2px;
+    }
+
+    /* INQUIRY FORM */
+    .inquiry-section-new {
+      padding: 64px 0;
+      background: #f3f4f6;
+    }
+    .inquiry-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 48px;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    .inquiry-card h2 {
+      font-size: 1.6rem; font-weight: 800;
+      color: #111827; margin-bottom: 6px; text-align: center;
+    }
+    .inquiry-card .form-desc {
+      font-size: 0.87rem; color: #6b7280;
+      text-align: center; margin-bottom: 32px;
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    .form-grp { display: flex; flex-direction: column; gap: 6px; margin-bottom: 0; }
+    .form-grp.full { margin-bottom: 18px; }
+    .form-grp label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: #374151;
+    }
+    .form-grp input,
+    .form-grp select,
+    .form-grp textarea {
+      padding: 11px 14px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 0.88rem; font-family: inherit;
+      color: #111827;
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-grp input:focus,
+    .form-grp select:focus,
+    .form-grp textarea:focus { border-color: #C9A84C; }
+    .form-grp textarea { resize: vertical; min-height: 110px; }
+    .form-grp select { appearance: none; cursor: pointer; }
+    .btn-submit-dark {
+      display: block; width: 100%;
+      background: #111827; color: #fff;
+      border: none; border-radius: 8px;
+      padding: 14px;
+      font-size: 0.95rem; font-weight: 700;
+      font-family: inherit; cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .btn-submit-dark:hover { background: #1f2937; }
+
+    /* OFFICES */
+    .offices-section-new {
+      padding: 64px 0;
+      background: #fff;
+    }
+    .offices-grid-new {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .office-card-new {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .office-card-new:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+      transform: translateY(-3px);
+    }
+    .office-card-new h3 {
+      font-size: 1.05rem; font-weight: 700;
+      color: #111827; margin-bottom: 10px;
+    }
+    .office-card-new p {
+      font-size: 0.85rem; color: #4b5563;
+      line-height: 1.6; margin-bottom: 16px;
+    }
+    .office-card-new a {
+      font-size: 0.85rem; font-weight: 600;
+      color: #C9A84C;
+      display: inline-flex; align-items: center; gap: 4px;
+      transition: gap 0.2s;
+    }
+    .office-card-new a:hover { gap: 8px; }
+
+    /* WHATSAPP CTA */
+    .wa-cta-section {
+      padding: 48px 0;
+      background: #f9fafb;
+      text-align: center;
+    }
+    .btn-whatsapp-new {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff;
+      padding: 14px 36px; border-radius: 50px;
+      font-size: 1rem; font-weight: 700;
+      font-family: inherit;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      border: none; cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-whatsapp-new:hover {
+      background: #1fba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp-new svg { width: 20px; height: 20px; }
+
+    /* NEWSLETTER */
+    .newsletter-section-new {
+      background: #0B1120;
+      padding: 64px 0;
+      text-align: center;
+    }
+    .newsletter-section-new h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800; color: #fff;
+      margin-bottom: 8px;
+    }
+    .newsletter-section-new p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+    }
+    .newsletter-form-new {
+      display: flex; gap: 0;
+      max-width: 420px; margin: 0 auto;
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .newsletter-form-new input {
+      flex: 1; padding: 13px 18px;
+      border: none; font-size: 0.88rem;
+      font-family: inherit; outline: none;
+      color: #111827;
+    }
+    .newsletter-form-new button {
+      background: #C9A84C; color: #111827;
+      border: none; padding: 13px 24px;
+      font-size: 0.88rem; font-weight: 700;
+      font-family: inherit; cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .newsletter-form-new button:hover { background: #e5c97b; }
+
+    /* FOOTER */
+    .contact-footer {
+      background: #07090f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 56px 0 0;
+    }
+    .contact-footer-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 44px;
+    }
+    .cf-brand h3 {
+      font-size: 1rem; font-weight: 800;
+      color: #C9A84C; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cf-brand h3 span { font-size: 1.3rem; }
+    .cf-brand p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.42);
+      line-height: 1.65; max-width: 220px; margin-bottom: 16px;
+    }
+    .cf-social { display: flex; gap: 10px; }
+    .cf-social a {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.45);
+      transition: all 0.2s;
+    }
+    .cf-social a:hover { border-color: #C9A84C; color: #C9A84C; }
+    .cf-social svg { width: 13px; height: 13px; }
+    .cf-col h4 {
+      font-size: 0.76rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.8); margin-bottom: 16px;
+    }
+    .cf-col ul { list-style: none; }
+    .cf-col ul li { margin-bottom: 10px; }
+    .cf-col ul li a {
+      font-size: 0.83rem; color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+    .cf-col ul li a:hover { color: #C9A84C; }
+    .cf-connect-desc {
+      font-size: 0.82rem; color: rgba(255,255,255,0.42);
+      line-height: 1.6; margin-bottom: 16px;
+    }
+    .cf-contact-link {
+      font-size: 0.88rem; font-weight: 600;
+      color: #C9A84C;
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: gap 0.2s;
+    }
+    .cf-contact-link:hover { gap: 9px; }
+    .contact-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 0; text-align: center;
+    }
+    .contact-footer-bottom p {
+      font-size: 0.77rem; color: rgba(255,255,255,0.25);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-cards-floating .container { grid-template-columns: repeat(2, 1fr); }
+      .journey-grid { grid-template-columns: 1fr; }
+      .journey-image { order: -1; }
+      .form-row-2 { grid-template-columns: 1fr; }
+      .offices-grid-new { grid-template-columns: 1fr; gap: 16px; }
+      .contact-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 600px) {
+      .contact-cards-floating .container { grid-template-columns: 1fr 1fr; }
+      .inquiry-card { padding: 28px 20px; }
+      .contact-footer-grid { grid-template-columns: 1fr; }
+      .contact-hero-watermark { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-accent">|</span> Vertex
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="btn-book-now">Book Now</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO — Image + Watermark ═══ -->
+  <section class="contact-hero">
+    <div class="contact-hero-bg">
+      <img src="images/luxury-office.png" alt="Vertex luxury global office">
+    </div>
+    <!-- V VERTEX watermark -->
+    <div class="contact-hero-watermark">
+      <span class="wm-v">V</span>
+      <span class="wm-vertex">Vertex</span>
+    </div>
+    <div class="contact-hero-content">
+      <h1>We're Here to Help</h1>
+    </div>
+  </section>
+
+  <!-- ═══ FLOATING CONTACT CARDS ═══ -->
+  <section class="contact-cards-floating">
+    <div class="container">
+      <!-- Phone -->
+      <div class="cf-card">
+        <div class="cf-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <h4>Phone</h4>
+        <p>+1 (800) VERTEX40</p>
+      </div>
+      <!-- Email -->
+      <div class="cf-card">
+        <div class="cf-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h4>Email</h4>
+        <p>concierge@vertex.com</p>
+      </div>
+      <!-- WhatsApp -->
+      <div class="cf-card">
+        <div class="cf-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/>
+          </svg>
+        </div>
+        <h4>WhatsApp</h4>
+        <p>+44 00 7846 0846</p>
+      </div>
+      <!-- Office -->
+      <div class="cf-card">
+        <div class="cf-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h4>Office</h4>
+        <p>Global HQ, London</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR JOURNEY ═══ -->
+  <section class="journey-section reveal">
+    <div class="container">
+      <div class="journey-grid">
+        <!-- Left: text -->
+        <div class="journey-content">
+          <p class="sub-label">Our Journey</p>
+          <h2>Defining the Future of Global Excellence</h2>
+          <p>At Vertex, our mission is to provide an unparalleled gateway to the world's most exclusive financial and travel experiences. Founded on the principles of absolute precision and elevated luxury, we bridge the gap between ambitious global goals and seamless execution. By accessing our portal, you agree to the data collection and compliance practices described herein.</p>
+          <p>We don't just manage assets; we curate lifestyles for those who demand excellence in every time zone.</p>
+          <div class="values-bar-new">
+            <span class="val">Trust</span>
+            <span class="val">Excellence</span>
+            <span class="val">Personalization</span>
+          </div>
+        </div>
+        <!-- Right: image -->
+        <div class="journey-image">
+          <img src="images/luxury-office.png" alt="Vertex luxury office space with city view">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INQUIRY FORM ═══ -->
+  <section class="inquiry-section-new reveal">
+    <div class="container">
+      <div class="inquiry-card">
+        <h2>Send an Inquiry</h2>
+        <p class="form-desc">Our concierge will respond within 2 hours.</p>
+        <form id="inquiry-form">
+          <div class="form-row-2">
+            <div class="form-grp">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full_name" placeholder="John Doe" required>
+            </div>
+            <div class="form-grp">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-grp">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890">
+            </div>
+            <div class="form-grp">
+              <label for="service-interest">Service Interest</label>
+              <select id="service-interest" name="service_interest" required>
+                <option value="" disabled selected>Wealth Management</option>
+                <option value="Wealth Management">Wealth Management</option>
+                <option value="Travel Planning">Travel Planning</option>
+                <option value="Currency Exchange">Currency Exchange</option>
+                <option value="Hotel Reservations">Hotel Reservations</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-grp full">
+            <label for="message">Everything / Message</label>
+            <textarea id="message" name="message" placeholder="How can we assist you today?" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn-submit-dark">Send Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OFFICES ═══ -->
+  <section class="offices-section-new reveal">
+    <div class="container">
+      <div class="offices-grid-new">
+        <div class="office-card-new">
+          <h3>Chennai</h3>
+          <p>Vertex Plaza, 4th Floor, Old Mahabalipuram Rd, Taramani, Chennai, Tamil Nadu 600113</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Get Directions ↗</a>
+        </div>
+        <div class="office-card-new">
+          <h3>Dubai</h3>
+          <p>DIFC, Gate Village 8, Level 12, Financial District, Dubai, United Arab Emirates</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Get Directions ↗</a>
+        </div>
+        <div class="office-card-new">
+          <h3>Singapore</h3>
+          <p>Marina Bay Financial Centre, Tower 3, 12 Marina Blvd, Singapore 018982</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Get Directions ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHATSAPP CTA ═══ -->
+  <section class="wa-cta-section reveal">
+    <div class="container">
+      <a href="https://wa.me/440078460846" class="btn-whatsapp-new" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+        Chat on WhatsApp Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="newsletter-section-new reveal">
+    <div class="container">
+      <h2>The Vertex Dispatch</h2>
+      <p>Weekly insights on global market shifts and exclusive travel opportunities.</p>
+      <form class="newsletter-form-new" id="newsletter-form">
+        <input type="email" placeholder="Enter your business email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="contact-footer">
+    <div class="container">
+      <div class="contact-footer-grid">
+        <!-- Brand -->
+        <div class="cf-brand">
+          <h3><span>|</span> Vertex</h3>
+          <p>Defining the future of global excellence through precision financial services and luxury travel experiences.</p>
+          <div class="cf-social">
+            <a href="#" aria-label="Globe">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Destinations -->
+        <div class="cf-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="portfolio.html">Travel Destinations</a></li>
+            <li><a href="portfolio.html">Currency Rates</a></li>
+            <li><a href="portfolio.html">Hotel Suites</a></li>
+          </ul>
+        </div>
+        <!-- Support -->
+        <div class="cf-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="contact.html">Global Offices</a></li>
+          </ul>
+        </div>
+        <!-- Connect -->
+        <div class="cf-col">
+          <h4>Connect</h4>
+          <p class="cf-connect-desc">Experience bespoke financial and travel solutions crafted exclusively for you.</p>
+          <a href="contact.html" class="cf-contact-link">Contact Us ↗</a>
+        </div>
+      </div>
+      <div class="contact-footer-bottom">
+        <p>&copy; 2026 Vertex Global Excellence. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+<script src="js/booking-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "vertex-website",
+  "version": "1.0.0",
+  "description": "Vertex Global Excellence — Luxury Travel, Finance & Hospitality Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

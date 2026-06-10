@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service — Vertex Global Group. Please read these terms carefully before accessing or executing transactions across our global ecosystem.">
+  <title>Terms of Service — Vertex Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #e5c97b;
+      --dark: #07090f;
+      --dark-800: #0d1321;
+      --dark-700: #111827;
+      --white: #fff;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--dark-800); color: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    .container-wide { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 64px; display: flex; align-items: center;
+    }
+    .navbar .container-wide { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-logo {
+      font-size: 1.1rem; font-weight: 900; color: var(--gold);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .btn-book-now {
+      background: var(--gold); color: var(--dark) !important;
+      padding: 9px 22px; border-radius: 6px;
+      font-size: 0.85rem !important; font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      transition: background 0.2s !important;
+    }
+    .btn-book-now:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    .tos-hero {
+      margin-top: 64px;
+      padding: 72px 0 56px;
+      text-align: center;
+      background: var(--dark-800);
+    }
+    .tos-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .tos-hero h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      line-height: 1.05;
+    }
+    .tos-hero p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── TOS CONTENT ── */
+    .tos-content {
+      padding: 20px 0 80px;
+      background: var(--dark-800);
+    }
+
+    /* Section blocks */
+    .tos-section {
+      padding: 48px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .tos-section:last-child { border-bottom: none; }
+
+    .tos-section h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .tos-section p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+
+    /* Sub-service items in section 2 */
+    .tos-sub-items {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .tos-sub-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .tos-sub-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .tos-sub-icon svg { width: 17px; height: 17px; color: var(--gold); }
+    .tos-sub-text h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .tos-sub-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* Blockquote in section 4 */
+    .tos-blockquote {
+      margin: 24px 0 0;
+      padding: 24px 28px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201,168,76,0.05);
+      border-radius: 0 8px 8px 0;
+    }
+    .tos-blockquote p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    /* Corporate Compliance footer card */
+    .tos-compliance {
+      margin-top: 16px;
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .tos-compliance h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .tos-compliance p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+    .tos-compliance-row {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .btn-compliance {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--white);
+      transition: color 0.2s;
+    }
+    .btn-compliance:hover { color: var(--gold); }
+    .btn-compliance svg { width: 14px; height: 14px; }
+
+    /* ── FOOTER ── */
+    .tos-footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 0 0;
+    }
+    .tos-footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+    .tos-footer-brand h3 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .tos-footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.65;
+      max-width: 230px;
+    }
+    .tos-footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+    .tos-footer-col ul { list-style: none; }
+    .tos-footer-col ul li { margin-bottom: 11px; }
+    .tos-footer-col ul li a {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      transition: color 0.2s;
+    }
+    .tos-footer-col ul li a:hover { color: var(--gold); }
+    .tos-footer-col ul li a.active-link { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+    .tos-footer-presence {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+    }
+    .tos-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      text-align: center;
+    }
+    .tos-footer-bottom p { font-size: 0.77rem; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .tos-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .tos-footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar">
+    <div class="container-wide">
+      <a href="index.html" class="nav-logo">Vertex</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn-book-now">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="tos-hero">
+    <div class="container">
+      <div class="tos-badge">Legal Compliance</div>
+      <h1>Terms of Service</h1>
+      <p>Effective Date: June 2026. Please read these terms carefully before accessing or executing transactions across our global ecosystem.</p>
+    </div>
+  </section>
+
+  <!-- ═══ TERMS SECTIONS ═══ -->
+  <section class="tos-content">
+    <div class="container">
+
+      <!-- 1. Agreement to Terms -->
+      <div class="tos-section">
+        <h2>1. Agreement to Terms</h2>
+        <p>By utilizing the website, portal services, or elite concierge networks operated by Vertex Global Group, you explicitly agree to be bound by these Terms of Service. These terms govern all three corporate verticals: <strong style="color:rgba(255,255,255,0.85);">Vertex Travel</strong>, <strong style="color:rgba(255,255,255,0.85);">Vertex Finance</strong>, and <strong style="color:rgba(255,255,255,0.85);">Vertex Hospitality</strong>. If you do not agree to these terms, you must immediately cease all portal interactions.</p>
+      </div>
+
+      <!-- 2. Service-Specific Conditions -->
+      <div class="tos-section">
+        <h2>2. Service-Specific Conditions</h2>
+        <p>Users must adhere to the distinct operational protocols governed by our separate branches:</p>
+        <div class="tos-sub-items">
+
+          <div class="tos-sub-item">
+            <div class="tos-sub-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19.5 2.5 18 1 16 1 14.5 2.5L11 6 2.8 4.2l-1.1 1.1 5.5 5.5L5 12.6 2 12 1 13l3.5 1.5L6 18l1-1-.5-3.1 4-2 5.6 5.5 1.1-1.2z"/>
+              </svg>
+            </div>
+            <div class="tos-sub-text">
+              <h4>Vertex Travel</h4>
+              <p>Governance over all dynamic booking engines, luxury itinerary finalization, and strict adherence to global airline cancellation policies and refund matrices.</p>
+            </div>
+          </div>
+
+          <div class="tos-sub-item">
+            <div class="tos-sub-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="tos-sub-text">
+              <h4>Vertex Finance</h4>
+              <p>Compliance with RBI, FEMA, and international liquidity regulations. Real-time rate locks are contingent on immediate transaction settlement and verification protocols.</p>
+            </div>
+          </div>
+
+          <div class="tos-sub-item">
+            <div class="tos-sub-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>
+              </svg>
+            </div>
+            <div class="tos-sub-text">
+              <h4>Vertex Hospitality</h4>
+              <p>Protocols for elite property access, biometric identification requirements at check-in, and tiered liability clauses for luxury asset maintenance.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Account Responsibility -->
+      <div class="tos-section">
+        <h2>3. Account Responsibility</h2>
+        <p>When creating an profile on the Vertex network, you are responsible for maintaining the strict confidentiality of your authentication credentials. Any unauthorized transaction telemetry or system actions executed under your profile credentials remain your absolute liability. Vertex employs multi-factor biometric authentication for all high-value movements; bypassing these safeguards is a violation of these terms.</p>
+      </div>
+
+      <!-- 4. Limitation of Liability -->
+      <div class="tos-section">
+        <h2>4. Limitation of Liability</h2>
+        <p>Vertex Global Group and its operational affiliates shall not be held liable for sudden global currency market fluctuations, flight schedule modifications, unforeseen travel delays, or external third-party vendor service disruptions.</p>
+        <div class="tos-blockquote">
+          <p>Vertex Global Group and its operational affiliates shall not be held liable for sudden global currency market fluctuations, flight schedule modifications, unforeseen travel delays, or external third-party vendor service disruptions. All services are rendered on an 'As Available' premium standard.</p>
+        </div>
+      </div>
+
+      <!-- 5. Amendments and Jurisdiction -->
+      <div class="tos-section">
+        <h2>5. Amendments and Jurisdiction</h2>
+        <p>Vertex reserves the absolute right to amend or restructure these Terms of Service at any phase to meet global regulatory standards. Any legal disputes arising from our financial, travel, or hospitality services will be governed by local corporate legal jurisdictions in which the service was rendered.</p>
+      </div>
+
+      <!-- Corporate Compliance CTA -->
+      <div class="tos-compliance">
+        <h4>Corporate Compliance</h4>
+        <p>Have specific queries regarding global regulations?</p>
+        <div class="tos-compliance-row">
+          <a href="mailto:compliance@vertexglobal.com" class="btn-compliance">
+            compliance@vertexglobal.com
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="tos-footer">
+    <div class="container-wide">
+      <div class="tos-footer-grid">
+        <div class="tos-footer-brand">
+          <h3>Vertex</h3>
+          <p>The pinnacle of global travel, finance, and hospitality integration for the elite traveler of the 2026 landscape.</p>
+        </div>
+        <div class="tos-footer-col">
+          <h4>Verticals</h4>
+          <ul>
+            <li><a href="portfolio.html">Travel</a></li>
+            <li><a href="portfolio.html">Exchange</a></li>
+            <li><a href="portfolio.html">Hotels</a></li>
+          </ul>
+        </div>
+        <div class="tos-footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html" class="active-link">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="tos-footer-col">
+          <h4>Global Presence</h4>
+          <div class="tos-footer-presence">
+            London | Singapore<br>Dubai | New York
+          </div>
+        </div>
+      </div>
+      <div class="tos-footer-bottom">
+        <p>&copy; 2026 Vertex Global Excellence. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/booking-modal.js"></script>
+</body>
+</html>

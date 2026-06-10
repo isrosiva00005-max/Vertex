@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Vertex Global — The Gold Standard in Integrated Travel, Finance, and Hospitality Stays. Discover our corporate pillars and global journey.">
+  <title>About — Vertex Global Excellence</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── About-page specific overrides ── */
+    .about-hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      margin-top: 72px;
+      overflow: hidden;
+    }
+    .about-hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .about-hero .hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .about-hero .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(11,17,32,0.82) 0%, rgba(11,17,32,0.45) 70%, rgba(11,17,32,0.1) 100%);
+    }
+    .about-hero-content {
+      position: relative; z-index: 1;
+      padding: 70px 0;
+      max-width: 560px;
+    }
+    .about-hero-content h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .about-hero-content p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+    .about-hero-logo {
+      position: absolute;
+      bottom: 36px; right: 40px;
+      z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .about-hero-logo svg { width: 28px; height: 28px; }
+
+    /* ── Corporate Pillars ── */
+    .pillars-section {
+      padding: var(--section-padding);
+      background: var(--white);
+    }
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .pillars-header .section-subtitle {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .pillar-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+    }
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: transparent;
+    }
+    .pillar-card .pillar-icon {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      background: var(--gray-100);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .pillar-card .pillar-icon svg { width: 26px; height: 26px; color: var(--dark-800); }
+    .pillar-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .pillar-card p { color: var(--gray-500); font-size: 0.88rem; line-height: 1.6; flex: 1; margin-bottom: 24px; }
+    .pillar-card .btn-pillar {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1.5px solid var(--dark-800);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--dark-800);
+      text-align: center;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      background: transparent;
+    }
+    .pillar-card:nth-child(2) .btn-pillar {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .pillar-card .btn-pillar:hover {
+      background: var(--dark-800);
+      color: var(--white);
+    }
+    .pillar-card:nth-child(2) .btn-pillar:hover {
+      background: var(--gold);
+      color: var(--dark-900);
+    }
+
+    /* ── Integrated Journey ── */
+    .journey-section {
+      padding: var(--section-padding);
+      background: var(--light-bg);
+    }
+    .journey-header { text-align: center; margin-bottom: 50px; }
+    .journey-header h2 { font-size: 1rem; font-weight: 600; color: var(--gray-500); margin-bottom: 6px; text-transform: none; letter-spacing: 0; font-family: var(--font-sans); }
+    .journey-header p { color: var(--gray-400); font-size: 0.9rem; }
+    .journey-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .journey-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gray-200) 20%, var(--gray-200) 80%, transparent);
+      z-index: 0;
+    }
+    .journey-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-step .step-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gold-muted);
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .journey-step .step-icon svg { width: 24px; height: 24px; color: var(--gold); }
+    .journey-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--dark-800); }
+    .journey-step p { font-size: 0.84rem; color: var(--gray-500); line-height: 1.55; }
+
+    /* ── Stats Bar Dark ── */
+    .about-stats-bar {
+      background: var(--dark-800);
+      padding: 40px 0;
+    }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .about-stat-item {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .about-stat-item .stat-icon-circle {
+      width: 48px; height: 48px; min-width: 48px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,168,76,0.4);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-stat-item .stat-icon-circle svg { width: 20px; height: 20px; color: var(--gold); }
+    .about-stat-item .stat-num {
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--white); line-height: 1;
+    }
+    .about-stat-item .stat-lbl {
+      font-size: 0.8rem; color: var(--gray-400);
+      margin-top: 4px; line-height: 1.3;
+    }
+
+    /* ── Global Perspectives (Testimonials) ── */
+    .perspectives-section {
+      padding: var(--section-padding);
+      background: var(--white);
+    }
+    .perspectives-header { text-align: center; margin-bottom: 50px; }
+    .perspectives-header .section-subtitle { color: var(--gold); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; }
+    .perspectives-header p { color: var(--gray-500); font-size: 0.9rem; margin-top: 6px; }
+    .perspectives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .perspective-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: all var(--transition-base);
+    }
+    .perspective-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+    .perspective-card .p-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .perspective-card .p-stars svg { width: 16px; height: 16px; fill: var(--gold); color: var(--gold); }
+    .perspective-card blockquote {
+      font-size: 0.9rem; color: var(--gray-600);
+      line-height: 1.65; font-style: italic;
+      margin-bottom: 22px;
+    }
+    .perspective-card blockquote::before { content: '\201C'; color: var(--gold); font-size: 1.5rem; line-height: 0; vertical-align: -0.4em; margin-right: 2px; }
+    .perspective-author { display: flex; align-items: center; gap: 12px; }
+    .perspective-author .p-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; color: var(--dark-700);
+      flex-shrink: 0;
+    }
+    .perspective-author .p-info h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 2px; }
+    .perspective-author .p-info p { font-size: 0.78rem; color: var(--gray-500); }
+
+    @media (max-width: 1024px) {
+      .pillars-grid, .perspectives-grid { grid-template-columns: 1fr 1fr; }
+      .journey-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .journey-steps::before { display: none; }
+      .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 640px) {
+      .pillars-grid, .perspectives-grid, .journey-steps { grid-template-columns: 1fr; }
+      .about-stats-grid { grid-template-columns: 1fr 1fr; }
+      .about-hero-logo { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-accent">|</span> Vertex
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn-book-now">Book Now</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="about-hero">
+    <div class="hero-bg">
+      <img src="images/about-hero.png" alt="Vertex Global Headquarters Building">
+    </div>
+    <div class="container">
+      <div class="about-hero-content reveal">
+        <h1>Unifying the World, One Bespoke Experience at a Time</h1>
+        <p>Vertex: The Gold Standard in Integrated Travel, Finance, and Hospitality Stays.</p>
+        <a href="#pillars" class="btn btn-primary">Discover Excellence</a>
+      </div>
+    </div>
+    <div class="about-hero-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      VERTEX
+    </div>
+  </section>
+
+  <!-- ═══ CORPORATE PILLARS ═══ -->
+  <section class="pillars-section" id="pillars">
+    <div class="container">
+      <div class="pillars-header reveal">
+        <div class="section-subtitle">Our Corporate Pillars</div>
+      </div>
+      <div class="pillars-grid">
+
+        <!-- Vertex Travel -->
+        <div class="pillar-card reveal reveal-delay-1">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Vertex Travel</h3>
+          <p>Bespoke luxury tour experiences and custom adventures across 5 continents, tailored for the discerning global citizen.</p>
+          <a href="portfolio.html" class="btn-pillar">Explore Tours</a>
+        </div>
+
+        <!-- Vertex Finance -->
+        <div class="pillar-card reveal reveal-delay-2">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Vertex Finance</h3>
+          <p>Fast, secure, and transparent currency exchange with automated cross-border transfer solutions for global portfolios.</p>
+          <a href="portfolio.html" class="btn-pillar">Check Rates</a>
+        </div>
+
+        <!-- Vertex Hospitality -->
+        <div class="pillar-card reveal reveal-delay-3">
+          <div class="pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3>Vertex Hospitality</h3>
+          <p>Exclusive corporate and retail access to a highly curated global collection of ultra-premium stays and private estates.</p>
+          <a href="portfolio.html" class="btn-pillar">View Stays</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTEGRATED JOURNEY ═══ -->
+  <section class="journey-section">
+    <div class="container">
+      <div class="journey-header reveal">
+        <h2>The Integrated Journey</h2>
+        <p>Seamlessly navigating your global path</p>
+      </div>
+      <div class="journey-steps">
+
+        <div class="journey-step reveal reveal-delay-1">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h4>1. Choose</h4>
+          <p>Select bespoke destination or currency parameters.</p>
+        </div>
+
+        <div class="journey-step reveal reveal-delay-2">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h4>2. Handle</h4>
+          <p>Managing documentation, flight lounges, and assets.</p>
+        </div>
+
+        <div class="journey-step reveal reveal-delay-3">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h4>3. Deliver</h4>
+          <p>Instant delivery of itineraries, rates, or digital keys.</p>
+        </div>
+
+        <div class="journey-step reveal reveal-delay-4">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h4>4. Experience</h4>
+          <p>24/7 elite concierge assistance globally.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAR ═══ -->
+  <section class="about-stats-bar">
+    <div class="container">
+      <div class="about-stats-grid">
+
+        <div class="about-stat-item reveal">
+          <div class="stat-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-num" data-count="40" data-suffix="+">40+</div>
+            <div class="stat-lbl">Countries</div>
+          </div>
+        </div>
+
+        <div class="about-stat-item reveal reveal-delay-1">
+          <div class="stat-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-num" data-count="50000" data-suffix="+">50,000+</div>
+            <div class="stat-lbl">Annual Clients</div>
+          </div>
+        </div>
+
+        <div class="about-stat-item reveal reveal-delay-2">
+          <div class="stat-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-num" style="font-size:1.2rem;">RBI & FEMA</div>
+            <div class="stat-lbl">Compliant</div>
+          </div>
+        </div>
+
+        <div class="about-stat-item reveal reveal-delay-3">
+          <div class="stat-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-num" data-count="98" data-suffix=".7%">98.7%</div>
+            <div class="stat-lbl">Satisfaction Score</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GLOBAL PERSPECTIVES ═══ -->
+  <section class="perspectives-section">
+    <div class="container">
+      <div class="perspectives-header reveal">
+        <div class="section-subtitle">Global Perspectives</div>
+        <p>Voices of the global elite</p>
+      </div>
+      <div class="perspectives-grid">
+
+        <div class="perspective-card reveal reveal-delay-1">
+          <div class="p-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>Vertex has redefined how our executive team manages cross-border travel. The integration of finance and hospitality is truly unique.</blockquote>
+          <div class="perspective-author">
+            <div class="p-avatar">MC</div>
+            <div class="p-info">
+              <h4>Marcus Chen</h4>
+              <p>Managing Director, Aria Global</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="perspective-card reveal reveal-delay-2">
+          <div class="p-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>The currency solutions provided by Vertex Finance saved us significant capital during our expansion into the European market.</blockquote>
+          <div class="perspective-author">
+            <div class="p-avatar">ER</div>
+            <div class="p-info">
+              <h4>Elena Rodriguez</h4>
+              <p>CFO, TechBridge EU</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="perspective-card reveal reveal-delay-3">
+          <div class="p-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <blockquote>Finding ultra-premium stays that accommodate corporate privacy is difficult. Vertex Hospitality delivers every single time.</blockquote>
+          <div class="perspective-author">
+            <div class="p-avatar">JT</div>
+            <div class="p-info">
+              <h4>Julian Thorne</h4>
+              <p>Founder, Thorne Estate Group</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <h2>Begin Your Global Journey</h2>
+      <p>Join the world's most discerning travelers and executives who trust Vertex for every cross-border move.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+        <a href="portfolio.html" class="btn btn-secondary">Explore Our Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Vertex</h3>
+          <p>The pinnacle of global travel, finance, and hospitality integration for the elite traveler.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Globe">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="portfolio.html">Exchange</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-connect">
+          <h4>Newsletter</h4>
+          <p>Weekly insights on global markets and exclusive opportunities.</p>
+          <form class="newsletter-form" style="margin-top:0; max-width:100%;">
+            <input type="email" placeholder="Enter your business email" required>
+            <button type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Vertex Global Group. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+<script src="js/booking-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy — Vertex Global Group. Your privacy and data security across our global operations are our highest priorities.">
+  <title>Privacy Policy — Vertex Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C9A84C;
+      --dark: #0B1120;
+      --dark-800: #111827;
+      --white: #fff;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: #fff; color: var(--dark); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: #fff;
+      border-bottom: 1px solid var(--gray-200);
+      height: 64px; display: flex; align-items: center;
+    }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 4px; }
+    .nav-logo .logo-accent { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--dark); }
+    .btn-book-now {
+      background: var(--dark); color: #fff !important;
+      padding: 9px 20px; border-radius: 6px;
+      font-size: 0.85rem !important; font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .btn-book-now:hover { background: #1f2937 !important; color: #fff; }
+
+    /* ── HERO ── */
+    .pp-hero {
+      margin-top: 64px;
+      padding: 64px 0 48px;
+      background: #fff;
+    }
+    .pp-hero h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .pp-hero p {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      max-width: 440px;
+      line-height: 1.65;
+    }
+
+    /* ── POLICY CONTENT ── */
+    .pp-content {
+      padding: 0 0 80px;
+      background: #fff;
+    }
+    .pp-section {
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .pp-section-header {
+      background: var(--dark-800);
+      padding: 24px 36px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .pp-section-num {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .pp-section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .pp-section-body {
+      background: var(--dark);
+      padding: 28px 36px;
+    }
+    .pp-section-body p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+
+    /* Sub-items in section 2 */
+    .pp-sub-items { margin-top: 20px; display: flex; flex-direction: column; gap: 16px; }
+    .pp-sub-item { display: flex; align-items: flex-start; gap: 14px; }
+    .pp-sub-item .sub-icon {
+      width: 32px; height: 32px; min-width: 32px;
+      background: rgba(201,168,76,0.12);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pp-sub-item .sub-icon svg { width: 16px; height: 16px; color: var(--gold); }
+    .pp-sub-item .sub-text h4 { font-size: 0.88rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .pp-sub-item .sub-text p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+
+    /* Section 4 with image */
+    .pp-section-body-img {
+      background: var(--dark);
+      padding: 28px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .pp-section-body-img p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+    .pp-section-img {
+      width: 160px; height: 120px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .pp-section-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Section 5 - rights */
+    .pp-rights-card {
+      background: var(--dark);
+      padding: 28px 36px;
+    }
+    .pp-rights-card p {
+      font-size: 0.88rem; color: rgba(255,255,255,0.72);
+      line-height: 1.7; margin-bottom: 20px;
+    }
+    .pp-rights-row {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .btn-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-email:hover { background: var(--gold); color: var(--dark); }
+    .btn-email svg { width: 15px; height: 15px; }
+    .rights-note { font-size: 0.83rem; color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    .pp-footer {
+      background: var(--dark-800);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 56px 0 0;
+    }
+    .pp-footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 0.8fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .pp-footer-brand h3 { font-size: 1rem; font-weight: 800; color: var(--gold); margin-bottom: 12px; }
+    .pp-footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; max-width: 220px; }
+    .pp-footer-col h4 { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+    .pp-footer-col ul { list-style: none; }
+    .pp-footer-col ul li { margin-bottom: 10px; }
+    .pp-footer-col ul li a { font-size: 0.83rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .pp-footer-col ul li a:hover { color: var(--gold); }
+    .pp-footer-social { display: flex; gap: 12px; margin-top: 16px; }
+    .pp-footer-social a {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5);
+      transition: all 0.2s;
+    }
+    .pp-footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .pp-footer-social svg { width: 14px; height: 14px; }
+    .pp-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 0;
+      text-align: center;
+    }
+    .pp-footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .pp-section-body-img { grid-template-columns: 1fr; }
+      .pp-section-img { width: 100%; height: 180px; }
+      .pp-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .pp-footer-grid { grid-template-columns: 1fr; }
+      .pp-section-header, .pp-section-body, .pp-section-body-img, .pp-rights-card { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><span class="logo-accent">|</span> Vertex</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn-book-now">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pp-hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Last Updated: June 2026. Your privacy and data security across our global operations are our highest priorities.</p>
+    </div>
+  </section>
+
+  <!-- POLICY SECTIONS -->
+  <section class="pp-content">
+    <div class="container">
+
+      <!-- 1. Scope -->
+      <div class="pp-section">
+        <div class="pp-section-header">
+          <span class="pp-section-num">1.</span>
+          <h2>Scope of This Policy</h2>
+        </div>
+        <div class="pp-section-body">
+          <p>This Privacy Policy applies to all services rendered by Vertex Global Group, including our integrated branches: <strong style="color:#fff;">Vertex Travel</strong> (tour itineraries and custom bookings), <strong style="color:#fff;">Vertex Finance</strong> (currency exchange, rate locks, and global cross-border transfers), and <strong style="color:#fff;">Vertex Hospitality</strong> (luxury stay reservations). By accessing our portal, you consent to the data collection and compliance practices described herein.</p>
+        </div>
+      </div>
+
+      <!-- 2. Information We Collect -->
+      <div class="pp-section">
+        <div class="pp-section-header">
+          <span class="pp-section-num">2.</span>
+          <h2>Information We Collect</h2>
+        </div>
+        <div class="pp-section-body">
+          <p>To deliver seamless luxury integration, we collect the following user metrics:</p>
+          <div class="pp-sub-items">
+            <div class="pp-sub-item">
+              <div class="sub-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div class="sub-text">
+                <h4>Personal Identification</h4>
+                <p>Full name, passport details (for global travel arrangements), and contact credentials.</p>
+              </div>
+            </div>
+            <div class="pp-sub-item">
+              <div class="sub-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <div class="sub-text">
+                <h4>Financial Data</h4>
+                <p>Transaction history, bank account configurations, and official identification required for regulatory currency compliance (under RBI &amp; FEMA frameworks).</p>
+              </div>
+            </div>
+            <div class="pp-sub-item">
+              <div class="sub-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="sub-text">
+                <h4>Technical &amp; Analytics Data</h4>
+                <p>IP address, device telemetry, browser cookies, and session navigation paths to optimize layout performance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. How We Utilize -->
+      <div class="pp-section">
+        <div class="pp-section-header">
+          <span class="pp-section-num">3.</span>
+          <h2>How We Utilize Your Information</h2>
+        </div>
+        <div class="pp-section-body">
+          <p>Your gathered data is strictly used to process secure bookings, authenticate currency exchanges, lock requested market rates, verify compliance mandates, and deliver round-the-clock elite concierge services.</p>
+        </div>
+      </div>
+
+      <!-- 4. Global Security Standards -->
+      <div class="pp-section">
+        <div class="pp-section-header">
+          <span class="pp-section-num">4.</span>
+          <h2>Global Security Standards</h2>
+        </div>
+        <div class="pp-section-body-img">
+          <p>Vertex employs advanced end-to-end encryption protocols and secure database environments. Financial and transaction information undergoes strict compliance monitoring to ensure zero data leaks or unauthorized access. We do not sell or lease your personal metrics to third-party marketing networks.</p>
+          <div class="pp-section-img">
+            <img src="images/circuit-board.png" alt="Security circuit board representing Vertex data protection">
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Your Data Rights -->
+      <div class="pp-section">
+        <div class="pp-section-header">
+          <span class="pp-section-num">5.</span>
+          <h2>Your Data Rights &amp; Contact Support</h2>
+        </div>
+        <div class="pp-rights-card">
+          <p>You retain the absolute right to request data erasure, profile corrections, or a detailed breakdown of your stored metrics.</p>
+          <div class="pp-rights-row">
+            <a href="mailto:privacy@vertexglobal.com" class="btn-email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              privacy@vertexglobal.com
+            </a>
+            <span class="rights-note">For any compliance queries or technical data requests.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pp-footer">
+    <div class="container">
+      <div class="pp-footer-grid">
+        <div class="pp-footer-brand">
+          <h3>Vertex Global</h3>
+          <p>Redefining luxury travel and global finance for the next generation of excellence.</p>
+          <div class="pp-footer-social">
+            <a href="#" aria-label="Globe">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pp-footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="portfolio.html">Travel Destinations</a></li>
+            <li><a href="portfolio.html">Currency Rates</a></li>
+            <li><a href="portfolio.html">Hotel Suites</a></li>
+          </ul>
+        </div>
+        <div class="pp-footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="contact.html">Global Offices</a></li>
+          </ul>
+        </div>
+        <div class="pp-footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Vertex</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pp-footer-bottom">
+        <p>&copy; 2026 Vertex Global Excellence. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/booking-modal.js"></script>
+</body>
+</html>
