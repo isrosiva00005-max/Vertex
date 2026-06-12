@@ -242,6 +242,13 @@ h4 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
   border: 2px solid var(--gold);
 }
 
+/* Remove the nav underline line from the Book Now pill button */
+.btn-book-now::after,
+.btn-book-now:hover::after,
+.btn-book-now.active::after {
+  display: none !important;
+}
+
 .btn-book-now:hover {
   background: var(--gold-hover);
   border-color: var(--gold-hover);
