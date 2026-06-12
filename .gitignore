@@ -32,3 +32,6 @@ audit-nav.js
 # Logs
 *.log
 logs/
+
+# Local Netlify folder
+.netlify

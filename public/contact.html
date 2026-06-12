@@ -20,16 +20,18 @@
     /* HERO with image + watermark */
     .contact-hero {
       position: relative;
-      min-height: 340px;
+      min-height: 480px;
       margin-top: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: visible;
+      padding-bottom: 80px;
     }
     .contact-hero-bg {
       position: absolute;
-      inset: 0;
+      top: 0; left: 0; right: 0;
+      bottom: -100px;
     }
     .contact-hero-bg img {
       width: 100%; height: 100%;
@@ -90,8 +92,8 @@
     .contact-cards-floating {
       position: relative;
       z-index: 10;
-      margin-top: -64px;
-      padding: 0 0 0;
+      margin-top: -120px;
+      padding: 0 0 40px;
     }
     .contact-cards-floating .container {
       display: grid;
