@@ -994,10 +994,28 @@ h4 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
    CTA SECTION
    ══════════════════════════════════════════════════════════ */
 .cta-section {
+  position: relative;
   padding: 80px 0;
   background: var(--dark-900);
+  background-image: url('../images/hero-cityscape.png');
+  background-size: cover;
+  background-position: center;
   text-align: center;
   color: var(--white);
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.78);
+  z-index: 0;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-section h2 {
