@@ -298,9 +298,25 @@
 
     /* NEWSLETTER */
     .newsletter-section-new {
+      position: relative;
       background: #0B1120;
+      background-image: url('../images/hero-cityscape.png');
+      background-size: cover;
+      background-position: center;
       padding: 64px 0;
       text-align: center;
+      overflow: hidden;
+    }
+    .newsletter-section-new::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 17, 32, 0.78);
+      z-index: 0;
+    }
+    .newsletter-section-new .container {
+      position: relative;
+      z-index: 1;
     }
     .newsletter-section-new h2 {
       font-size: clamp(1.4rem, 3vw, 2rem);
