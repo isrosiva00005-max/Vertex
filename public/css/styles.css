@@ -1021,8 +1021,16 @@ h4 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
 
 /* Gold CTA variant */
 .cta-section-gold {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--dark-900) 0%, var(--dark-700) 100%);
   border-top: 3px solid var(--gold);
+}
+
+.cta-bg-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1672,8 +1680,8 @@ h4 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 48px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 40px;
   padding-bottom: 40px;
 }
 
